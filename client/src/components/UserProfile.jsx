@@ -41,7 +41,7 @@ const UserProfile = () => {
 				setPins(data);
 			});
 		} else {
-			const saveddPinsQuery = saveddPinsQuery(userId);
+			const saveddPinsQuery = userSavedPinsQuery(userId);
 			client.fetch(saveddPinsQuery).then((data) => {
 				setPins(data);
 			});
@@ -117,19 +117,25 @@ const UserProfile = () => {
 							type='button'
 							onClick={(e) => {
 								setText(e.target.textContent);
-								setActiveBtn('Saved');
+								setActiveBtn('saved');
 							}}
 							className={`${
-								activeBtn === 'Saved'
+								activeBtn === 'saved'
 									? activeBtnStyles
 									: notActiveBtnStyles
 							}`}>
 							Saved
 						</button>
 					</div>
-					<div className='px-2'>
-						<MasonryLayout pins={pins} />
-					</div>
+					{pins?.length ? (
+						<div className='px-2'>
+							<MasonryLayout pins={pins} />
+						</div>
+					) : (
+						<div className='flex justify-center items-center font-bold w-full text-xl mt-2'>
+							No Pins Found!
+						</div>
+					)}
 				</div>
 			</div>
 		</div>

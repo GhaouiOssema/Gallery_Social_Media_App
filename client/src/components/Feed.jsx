@@ -28,6 +28,9 @@ const Feed = () => {
 
 	if (loading)
 		return <Spinner msg='We are adding new ideas to your feed !!' />;
+
+	if (!pins?.length) return <h2>No pains available</h2>;
+
 	return <div>{pins && <MasonryLayout pins={pins} />}</div>;
 };
 

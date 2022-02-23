@@ -106,9 +106,9 @@ const Pin = ({ pin: { postedBy, image, _id, destination, save } }) => {
 									rel='noreferrer'>
 									{' '}
 									<BsFillArrowUpRightCircleFill />
-									{destination.length > 20
-										? destination.slice(8, 17)
-										: destination.slice(8)}
+									{destination.length > 15
+										? `${destination.slice(0, 15)}...`
+										: destination}
 								</a>
 							) : undefined}
 							{postedBy?._id === user?.googleId && (

@@ -12,28 +12,6 @@ const isNotActiveStyle =
 
 const isActiveStyle =
 	'flex items-center px-5 gap-3 font-extrabold border-r-2 border-black transition-all duration-200 ease-in-out capitalize';
-const logOutStyle =
-	'flex flex-row items-center font-bold mt-2 px-3 text-base text-base cursor-pointer hover:text-red-700';
-// const categories = [
-// 	{
-// 		name: 'Animals',
-// 	},
-// 	{
-// 		name: 'Wallpapers',
-// 	},
-// 	{
-// 		name: 'Photography',
-// 	},
-// 	{
-// 		name: 'Gaming',
-// 	},
-// 	{
-// 		name: 'Coding',
-// 	},
-// 	{
-// 		name: 'Other',
-// 	},
-// ];
 
 const SideBar = ({ user, closeToggle }) => {
 	const navigate = useNavigate();
@@ -77,15 +55,6 @@ const SideBar = ({ user, closeToggle }) => {
 								{category.name}
 							</NavLink>
 						))}
-					<div
-						className={logOutStyle}
-						onClick={() => {
-							localStorage.clear();
-							navigate('/login', { replace: true });
-						}}>
-						<BiLogOutCircle fontSize={20} className='mr-2' />
-						Log Out
-					</div>
 				</div>
 			</div>
 			{user && (

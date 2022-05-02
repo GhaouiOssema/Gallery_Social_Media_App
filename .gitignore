@@ -2,7 +2,7 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=node
 
 
-/frontend_sanity/.env
+/client/.env
 
 ### Node ###
 # Logs
